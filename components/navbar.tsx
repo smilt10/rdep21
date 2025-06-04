@@ -86,6 +86,7 @@ const navItems = [
   { label: "Nos activités", href: "/activites" },
   { label: "Nos réalisations", href: "/realisations" },
   { label: "Témoignages", href: "/temoignages" },
+  { label: "RGE/CAPEB", href: "/rge-capeb" },
   { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },
 ]

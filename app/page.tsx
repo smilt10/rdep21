@@ -7,7 +7,96 @@ import TestimonialCarousel from "@/components/testimonial-carousel"
 import HeroImageCarousel from "@/components/hero-image-carousel"
 import { Button } from "@/components/ui/button"
 
-export default function Home() {
+interface Service {
+  id: string
+  title: string
+  description: string
+  link: string
+  icon: string
+  order: number
+}
+
+async function getServices(): Promise<Service[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/services`, {
+      cache: 'no-store'
+    })
+    if (response.ok) {
+      return await response.json()
+    }
+  } catch (error) {
+    console.error('Error fetching services:', error)
+  }
+  
+  // Fallback to default services if API fails
+  return [
+    {
+      id: "1",
+      title: "Peinture",
+      description: "Peinture intérieure et extérieure avec une large gamme de finitions et de couleurs.",
+      link: "/activites#peinture",
+      icon: "red",
+      order: 1,
+    },
+    {
+      id: "2",
+      title: "Revêtements Muraux",
+      description: "Installation de papier peint, tissu mural et autres revêtements décoratifs.",
+      link: "/activites#revetements-muraux",
+      icon: "blue",
+      order: 2,
+    },
+    {
+      id: "3",
+      title: "Revêtements de Sol",
+      description: "Installation de parquet, carrelage, linoléum et autres revêtements de sol.",
+      link: "/activites#revetements-sol",
+      icon: "green",
+      order: 3,
+    },
+    {
+      id: "4",
+      title: "Plâtrerie",
+      description: "Travaux de plâtrerie, cloisons, doublage et isolation thermique et acoustique.",
+      link: "/activites#platrerie",
+      icon: "yellow",
+      order: 4,
+    },
+    {
+      id: "5",
+      title: "Rénovation Complète",
+      description: "Rénovation complète d'intérieur pour particuliers et professionnels.",
+      link: "/activites#renovation-complete",
+      icon: "purple",
+      order: 5,
+    },
+    {
+      id: "6",
+      title: "Façades",
+      description: "Rénovation et ravalement de façades pour redonner vie à l'extérieur de votre bâtiment.",
+      link: "/activites#facades",
+      icon: "orange",
+      order: 6,
+    },
+  ]
+}
+
+function getIconColorClass(colorName: string) {
+  const colorMap: { [key: string]: string } = {
+    red: "bg-red-500",
+    blue: "bg-blue-500",
+    green: "bg-green-500",
+    yellow: "bg-yellow-500",
+    purple: "bg-purple-500",
+    orange: "bg-orange-500",
+    pink: "bg-pink-500",
+    indigo: "bg-indigo-500",
+  }
+  return colorMap[colorName] || "bg-blue-500"
+}
+
+export default async function Home() {
+  const services = await getServices()
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -60,10 +149,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 transition-all hover:shadow-lg">
+            {services.map((service) => (
+              <div key={service.id} className="bg-gray-50 rounded-xl p-6 transition-all hover:shadow-lg">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  {service.icon}
+                  <div className={`w-6 h-6 ${getIconColorClass(service.icon)} rounded-full`} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
@@ -241,44 +330,7 @@ export default function Home() {
   )
 }
 
-const services = [
-  {
-    title: "Peinture",
-    description: "Peinture intérieure et extérieure avec une large gamme de finitions et de couleurs.",
-    link: "/activites#peinture",
-    icon: <div className="w-6 h-6 bg-red-500 rounded-full" />,
-  },
-  {
-    title: "Revêtements Muraux",
-    description: "Installation de papier peint, tissu mural et autres revêtements décoratifs.",
-    link: "/activites#revetements-muraux",
-    icon: <div className="w-6 h-6 bg-blue-500 rounded-full" />,
-  },
-  {
-    title: "Revêtements de Sol",
-    description: "Installation de parquet, carrelage, linoléum et autres revêtements de sol.",
-    link: "/activites#revetements-sol",
-    icon: <div className="w-6 h-6 bg-green-500 rounded-full" />,
-  },
-  {
-    title: "Plâtrerie",
-    description: "Travaux de plâtrerie, cloisons, doublage et isolation thermique et acoustique.",
-    link: "/activites#platrerie",
-    icon: <div className="w-6 h-6 bg-yellow-500 rounded-full" />,
-  },
-  {
-    title: "Rénovation Complète",
-    description: "Rénovation complète d'intérieur pour particuliers et professionnels.",
-    link: "/activites#renovation-complete",
-    icon: <div className="w-6 h-6 bg-purple-500 rounded-full" />,
-  },
-  {
-    title: "Façades",
-    description: "Rénovation et ravalement de façades pour redonner vie à l'extérieur de votre bâtiment.",
-    link: "/activites#facades",
-    icon: <div className="w-6 h-6 bg-orange-500 rounded-full" />,
-  },
-]
+
 
 const projects = [
   {

@@ -12,7 +12,8 @@ import {
   FileText, 
   Settings, 
   LogOut,
-  ChevronRight
+  ChevronRight,
+  Wrench
 } from "lucide-react"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent } from "@/components/ui/tabs"
@@ -21,6 +22,7 @@ import TestimonialsManager from "@/components/admin/testimonials-manager"
 import ContentManager from "@/components/admin/content-manager"
 import SettingsManager from "@/components/admin/settings-manager"
 import CarouselManager from "@/components/admin/carousel-manager"
+import ServicesManager from "@/components/admin/services-manager"
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -129,6 +131,22 @@ export default function AdminDashboard() {
             </Link>
             
             <Link
+              href="#services"
+              className={`flex items-center justify-between rounded-lg px-4 py-3 transition-all duration-200 ${
+                activeTab === "services" 
+                  ? "bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-md" 
+                  : "hover:bg-cyan-50 text-gray-700"
+              }`}
+              onClick={() => setActiveTab("services")}
+            >
+              <div className="flex items-center">
+                <Wrench className={`mr-3 h-5 w-5 ${activeTab === "services" ? "text-white" : "text-cyan-500"}`} />
+                <span className="font-medium">Services</span>
+              </div>
+              {activeTab === "services" && <ChevronRight className="h-4 w-4 text-white" />}
+            </Link>
+            
+            <Link
               href="#carousel"
               className={`flex items-center justify-between rounded-lg px-4 py-3 transition-all duration-200 ${
                 activeTab === "carousel" 
@@ -176,7 +194,7 @@ export default function AdminDashboard() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <DashboardCard
                   title="Réalisations"
                   count={12}
@@ -192,6 +210,14 @@ export default function AdminDashboard() {
                   onClick={() => setActiveTab("testimonials")}
                   color="from-amber-500 to-orange-500"
                   description="Avis clients"
+                />
+                <DashboardCard
+                  title="Services"
+                  count={6}
+                  icon={<Wrench className="h-8 w-8 text-white" />}
+                  onClick={() => setActiveTab("services")}
+                  color="from-cyan-500 to-teal-500"
+                  description="Services offerts"
                 />
                 <DashboardCard
                   title="Images Carousel"
@@ -265,6 +291,17 @@ export default function AdminDashboard() {
                 </div>
               </div>
               <CarouselManager />
+            </TabsContent>
+
+            <TabsContent value="services" className="mt-0">
+              <div className="bg-gradient-to-r from-cyan-500 to-teal-500 rounded-lg p-1 mb-6 shadow-md">
+                <div className="bg-white rounded-md p-4">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
+                    Gestion des Services
+                  </h2>
+                </div>
+              </div>
+              <ServicesManager />
             </TabsContent>
 
             <TabsContent value="settings" className="mt-0">
