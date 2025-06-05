@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -56,7 +57,7 @@ export default function HangingBadge() {
         {/* Badge */}
         <div
           className={cn(
-            "relative w-28 h-28 md:w-40 md:h-40 rounded-md overflow-visible shadow-lg transition-all duration-300",
+            "relative w-32 h-40 md:w-44 md:h-52 rounded-md overflow-visible shadow-lg transition-all duration-300",
             isSwinging && "animate-badge-swing",
           )}
         >
@@ -68,14 +69,36 @@ export default function HangingBadge() {
             <X className="h-3 w-3" />
           </button>
 
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download-uJT4NQKOFfeEyTkkBRyLDgaWIyXZM9.png"
-            alt="Certification Qualibat RGE"
-            width={150}
-            height={150}
-            className="h-auto w-full object-contain"
-            priority
-          />
+          <Link 
+            href="/rge-capeb"
+            className="block h-full w-full bg-white rounded-md p-2 hover:bg-gray-50 transition-colors cursor-pointer"
+            aria-label="Voir nos certifications RGE et CAPEB"
+          >
+            <div className="flex flex-col h-full justify-center items-center space-y-1">
+              {/* RGE Certification */}
+              <div className="flex-1 flex items-center justify-center">
+                <Image
+                  src="/images/qualibat-rge.jpeg"
+                  alt="Certification Qualibat RGE"
+                  width={80}
+                  height={60}
+                  className="h-auto max-w-full object-contain"
+                  priority
+                />
+              </div>
+              
+              {/* CAPEB Certification */}
+              <div className="flex-1 flex items-center justify-center">
+                <Image
+                  src="/images/capeb-logo.png"
+                  alt="Certification CAPEB"
+                  width={80}
+                  height={60}
+                  className="h-auto max-w-full object-contain"
+                />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
