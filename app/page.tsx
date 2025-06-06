@@ -16,8 +16,19 @@ interface Service {
   order: number
 }
 
-function getServices(): Service[] {
-  // Static services data for GitHub Pages
+async function getServices(): Promise<Service[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/services`, {
+      cache: 'no-store'
+    })
+    if (response.ok) {
+      return await response.json()
+    }
+  } catch (error) {
+    console.error('Error fetching services:', error)
+  }
+  
+  // Fallback to default services if API fails
   return [
     {
       id: "1",
@@ -84,8 +95,8 @@ function getIconColorClass(colorName: string) {
   return colorMap[colorName] || "bg-blue-500"
 }
 
-export default function Home() {
-  const services = getServices()
+export default async function Home() {
+  const services = await getServices()
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />

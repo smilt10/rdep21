@@ -13,7 +13,7 @@ export default function HangingBadge() {
 
   useEffect(() => {
     // Check if user has previously dismissed the badge
-    const badgeDismissed = localStorage.getItem("qualibat-badge-dismissed")
+    const badgeDismissed = localStorage.getItem("rge-capeb-badge-dismissed")
     if (badgeDismissed === "true") {
       setIsVisible(false)
     }
@@ -40,7 +40,7 @@ export default function HangingBadge() {
 
   const handleDismiss = () => {
     setIsVisible(false)
-    localStorage.setItem("qualibat-badge-dismissed", "true")
+    localStorage.setItem("rge-capeb-badge-dismissed", "true")
   }
 
   if (!isVisible) return null
