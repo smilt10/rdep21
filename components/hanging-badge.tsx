@@ -57,7 +57,7 @@ export default function HangingBadge() {
         {/* Badge */}
         <div
           className={cn(
-            "relative w-32 h-40 md:w-44 md:h-52 rounded-md overflow-visible shadow-lg transition-all duration-300",
+            "relative w-32 h-32 md:w-44 md:h-44 rounded-md overflow-visible shadow-lg transition-all duration-300",
             isSwinging && "animate-badge-swing",
           )}
         >
@@ -71,30 +71,30 @@ export default function HangingBadge() {
 
           <Link 
             href="/rge-capeb"
-            className="block h-full w-full bg-white rounded-md p-2 hover:bg-gray-50 transition-colors cursor-pointer"
+            className="block h-full w-full bg-white rounded-md p-1 hover:bg-gray-50 transition-colors cursor-pointer"
             aria-label="Voir nos certifications RGE et CAPEB"
           >
-            <div className="flex flex-col h-full justify-center items-center space-y-1">
-              {/* RGE Certification */}
-              <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-row h-full justify-center items-center space-x-1">
+              {/* CAPEB Certification */}
+              <div className="flex-1 flex items-center justify-center h-full">
                 <Image
-                  src="/images/qualibat-rge.jpeg"
-                  alt="Certification Qualibat RGE"
-                  width={80}
-                  height={60}
-                  className="h-auto max-w-full object-contain"
+                  src="/images/capeb.png"
+                  alt="Certification CAPEB - L'Artisanat du Bâtiment"
+                  width={90}
+                  height={65}
+                  className="max-w-full max-h-full object-contain"
                   priority
                 />
               </div>
               
-              {/* CAPEB Certification */}
-              <div className="flex-1 flex items-center justify-center">
+              {/* RGE Certification */}
+              <div className="flex-1 flex items-center justify-center h-full">
                 <Image
-                  src="/images/capeb-logo.png"
-                  alt="Certification CAPEB"
-                  width={80}
-                  height={60}
-                  className="h-auto max-w-full object-contain"
+                  src="/images/LogRGE.jpg"
+                  alt="Certification RGE - Votre label de fiabilité"
+                  width={70}
+                  height={50}
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
             </div>

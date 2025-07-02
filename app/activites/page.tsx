@@ -35,24 +35,48 @@ export default function ActivitiesPage() {
                 Nous utilisons tous types de peintures : glycéro, acrylique, alkyde, laquée, satinée et écologique.
               </p>
               <div className="flex items-center">
-                <Image
-                  src="/images/mascot-painter.png"
-                  alt="Peintre RDEP21"
-                  width={150}
-                  height={150}
-                  className="object-contain mr-6"
-                />
+                
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Notre engagement</h3>
                   <p className="text-gray-700">
                     Nous réalisons tous nos travaux avec soin pour vous garantir un résultat impeccable.
                   </p>
+                  <div className="flex gap-4 mt-4">
+                    <Image
+                      src="/images/P1.png"
+                      alt="Certification P1"
+                      width={200}
+                      height={200}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P2.png"
+                      alt="Certification P2"
+                      width={150}
+                      height={200}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P3.png"
+                      alt="Certification P3"
+                      width={150}
+                      height={200}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P4.png"
+                      alt="Certification P4"
+                      width={150}
+                      height={200}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=2069"
+                src="/images/man_paint.png"
                 alt="Services de peinture"
                 fill
                 className="object-cover"
@@ -62,43 +86,29 @@ export default function ActivitiesPage() {
         </div>
       </section>
 
-      {/* Revêtements Muraux Section */}
+      {/* Revêtements Muraux et Sols Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1615529162924-f8605388461d?q=80&w=2080"
-                alt="Revêtements muraux"
+                src="/images/Parquet.jpg"
+                alt="Revêtements muraux et sols"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Revêtements Muraux</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Revêtements Muraux et Sols</h2>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Pour les Revêtements Muraux :</h3>
               <p className="text-lg text-gray-600 mb-4">
-                Nous installons papier peint, tissu en verre et tissu mural pour donner une nouvelle dimension à vos
-                espaces.
+                Nous posons papier peint, toile de verre décoratifpour donner une nouvelle dimension à vos espaces.
               </p>
+             <h3 className="text-xl font-bold text-gray-900 mb-3">Pour les sols :</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Papier peint traditionnel et design</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Tissu en verre pour une isolation phonique</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Tissu mural décoratif</p>
-                </li>
+                
+                  <p className="text-gray-700">Nous sommes à votre disposition pour tous types de revêtements de sol : tout type de parquets flottant, PVC, dalle PVC, etc.. , Rénovation sol (ponçage, vitrification)</p>
+                
               </ul>
               <Button asChild>
                 <Link href="/contact">Demander un devis</Link>
@@ -108,57 +118,25 @@ export default function ActivitiesPage() {
         </div>
       </section>
 
-      {/* Revêtements de Sol Section */}
+      {/* Isolation Intérieure Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Revêtements de Sol</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Isolation Thermique par l’Intérieure (ITI)</h2>
+              <h6 className="text-lg text-gray-600 mb-4">Certification RGE  No E-E191032,  7122 Isolation thermique par l'intérieur </h6>
               <p className="text-lg text-gray-600 mb-4">
-                Nous sommes à votre disposition pour tous types de revêtements de sol : parquet, carrelage, linoléum,
-                etc.
+                Isolation des murs, des rampants, des plafonds et des planchers bas. Egalement, isolation des combles.
               </p>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Étapes concernant les parquets :</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Remise à neuf</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Rénovation</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Pose</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Ponçage</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Vitrification</p>
-                </li>
-              </ul>
+             
               <Button asChild>
                 <Link href="/contact">Demander un devis</Link>
               </Button>
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=1974"
-                alt="Revêtements de sol"
+                src="/images/isolant.jpg"
+                alt="Isolation intérieure"
                 fill
                 className="object-cover"
               />
@@ -167,27 +145,39 @@ export default function ActivitiesPage() {
         </div>
       </section>
 
-      {/* Plâtrerie Section */}
+      {/* Platerie – Placo – Plafond suspendu Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?q=80&w=1974"
-                alt="Plâtrerie et cloisons"
+                src="/images/placoo.jpg"
+                alt="Platerie, Placo et plafonds suspendus"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Plâtrerie et Cloisons</h2>
-              <p className="text-lg text-gray-600 mb-4">Nous réalisons les travaux suivants :</p>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Platerie – Placo – Plafond suspendu</h2>
+              <p className="text-lg text-gray-600 mb-4">Nous réalisons tous vos travaux de plâtrerie, pose de placo et installation de plafonds suspendus :</p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight className="h-4 w-4 text-primary" />
                   </div>
-                  <p className="text-gray-700">Plâtrerie</p>
+                  <p className="text-gray-700">Plâtrerie traditionnelle</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <ChevronRight className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="text-gray-700">Pose de plaques de plâtre (Placo)</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <ChevronRight className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="text-gray-700">Installation de plafonds suspendus</p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
@@ -199,36 +189,43 @@ export default function ActivitiesPage() {
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight className="h-4 w-4 text-primary" />
                   </div>
-                  <p className="text-gray-700">Isolation intérieure des murs et plafonds</p>
+                  <p className="text-gray-700">Cloisons et cloisonnement</p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight className="h-4 w-4 text-primary" />
                   </div>
-                  <p className="text-gray-700">Construction de faux plafonds</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Isolation ou aménagement de combles perdus</p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Travaux de cloisonnement : distribution, isolation phonique</p>
+                  <p className="text-gray-700">Finitions et enduits</p>
                 </li>
               </ul>
+                 <div className="flex gap-4 mt-4">
+                    <Image
+                      src="/images/dora.png"
+                      alt="Doras"
+                      width={100}
+                      height={100}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/litt.jpg"
+                      alt="Litt"
+                      width={200}
+                      height={200}
+                      className="object-contain"
+                    />
+                    
+                  </div>
               <Button asChild>
                 <Link href="/contact">Demander un devis</Link>
               </Button>
             </div>
           </div>
         </div>
+        
+        
       </section>
 
-      {/* Façades Section */}
+      {/* Rénovation de Façades Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -242,41 +239,104 @@ export default function ActivitiesPage() {
                 Notre équipe qualifiée assure un travail soigné et durable, respectant les caractéristiques
                 architecturales de votre bâtiment.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="relative h-40 w-full overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=160&width=240"
-                    alt="Façade avant rénovation"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                    <span className="text-white font-medium">Avant</span>
+               <div className="flex gap-4 mt-4">
+                    <Image
+                      src="/images/dora.png"
+                      alt="Doras"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P1.png"
+                      alt="Certification P1"
+                      width={180}
+                      height={200}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P3.png"
+                      alt="Certification P1"
+                      width={150}
+                      height={150}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/litt.jpg"
+                      alt="Litt"
+                      width={100}
+                      height={100}
+                      className="object-contain"
+                    />
+                    <Image
+                      src="/images/P4.png"
+                      alt="Certification P1"
+                      width={100}
+                      height={100}
+                      className="object-contain"
+                    />
+                    
                   </div>
-                </div>
-                <div className="relative h-40 w-full overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=160&width=240"
-                    alt="Façade après rénovation"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <span className="text-white font-medium">Après</span>
-                  </div>
-                </div>
-              </div>
+             
               <Button asChild>
                 <Link href="/contact">Demander un devis</Link>
               </Button>
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1518005068251-37900150dfca?q=80&w=1965"
+                src="/images/avant.jpg"
                 alt="Rénovation de façades"
                 fill
                 className="object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Isolation Extérieure Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1 relative h-[400px] w-full overflow-hidden rounded-xl">
+              <Image
+                src="/images/external.jpg"
+                alt="Isolation extérieure"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Isolation Thermique par l’Extérieur (ITE)</h2>
+              <h6 className="text-lg text-gray-600 mb-4">Certification RGE  No E-E191032,  7122 Isolation thermique par l'intérieur </h6>
+              <p className="text-lg text-gray-600 mb-4">
+                Nous sommes certifiés RGE pour tous vos travaux d'isolation thermique extérieure. Améliorez l'efficacité énergétique de votre bâtiment.
+              </p>
+              <ul className="space-y-3 mb-6">
+               
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <ChevronRight className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="text-gray-700">Bardage et vêtures</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <ChevronRight className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="text-gray-700">Enduits isolants</p>
+                </li>
+                
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <ChevronRight className="h-4 w-4 text-primary" />
+                  </div>
+                  <p className="text-gray-700">Amélioration du DPE</p>
+                </li>
+              </ul>
+              <Button asChild>
+                <Link href="/contact">Demander un devis</Link>
+              </Button>
             </div>
           </div>
         </div>

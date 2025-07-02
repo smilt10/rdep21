@@ -141,7 +141,7 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-primary mr-4 mt-1" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Adresse</h3>
-                    <p className="text-gray-600">16 rue Saint Martin, 21000 DIJON</p>
+                    <p className="text-gray-600">21000 DIJON</p>
                   </div>
                 </div>
 
@@ -173,15 +173,22 @@ export default function ContactPage() {
 
               <div className="mt-12 flex gap-4">
                 <Image
-                  src="/images/artisan-logo.png"
+                  src="/images/artisan.png"
                   alt="Certification Artisan"
                   width={100}
                   height={100}
                   className="object-contain"
                 />
                 <Image
-                  src="/images/qualibat-rge.jpeg"
-                  alt="Certification Qualibat RGE"
+                  src="/images/LogRGE.jpg"
+                  alt="Certification RGE"
+                  width={100}
+                  height={50}
+                  className="object-contain"
+                />
+                <Image
+                  src="/images/capeb.png"
+                  alt="CAPEB Côte-d'Or"
                   width={100}
                   height={100}
                   className="object-contain"
@@ -236,11 +243,11 @@ export default function ContactPage() {
 
 const workTypes = [
   "Peinture",
-  "Revêtements muraux",
-  "Revêtements de sol",
-  "Cloisons et plâtrerie",
-  "Façades",
-  "Rénovation complète",
+  "Revêtements muraux et sols",
+  "Isolation intérieure (RGE)",
+  "Platerie – Placo – Plafond suspendu",
+  "Rénovation de façades",
+  "Isolation extérieure (RGE)",
   "Autres",
 ]
 

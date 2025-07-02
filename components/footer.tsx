@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center">
-              <div className="relative h-16 w-44">
+              <div className="relative h-24 w-64">
                 <Image src="/images/logo-new.png" alt="RDEP21 Logo" fill className="object-contain" />
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                <span>16 rue Saint Martin, 21000 DIJON</span>
+                <span>21000 DIJON</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="mt-4 flex items-center space-x-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
                 <Image
-                  src="/images/artisan-logo.png"
+                  src="/images/artisan.png"
                   alt="Certification Artisan"
                   width={60}
                   height={60}
@@ -83,8 +83,8 @@ export default function Footer() {
               </div>
               <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
                 <Image
-                  src="/images/qualibat-rge.jpeg"
-                  alt="Certification Qualibat RGE"
+                  src="/images/LogRGE.jpg"
+                  alt="Certification RGE"
                   width={60}
                   height={60}
                   className="object-contain"
@@ -92,7 +92,7 @@ export default function Footer() {
               </div>
               <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
                 <Image
-                  src="/images/capeb-logo.png"
+                  src="/images/capeb.png"
                   alt="CAPEB Côte-d'Or"
                   width={60}
                   height={60}
@@ -122,12 +122,12 @@ export default function Footer() {
 }
 
 const footerServices = [
-  { label: "Peinture", href: "/services/peinture" },
-  { label: "Revêtements muraux", href: "/services/revetements-muraux" },
-  { label: "Revêtements de sol", href: "/services/revetements-sol" },
-  { label: "Plâtrerie", href: "/services/platrerie" },
-  { label: "Rénovation complète", href: "/services/renovation-complete" },
-  { label: "Façades", href: "/services/facades" },
+  { label: "Peinture", href: "/activites" },
+  { label: "Revêtements muraux et sols", href: "/activites" },
+  { label: "Isolation intérieure (RGE)", href: "/activites" },
+  { label: "Platerie – Placo – Plafond suspendu", href: "/activites" },
+  { label: "Rénovation de façades", href: "/activites" },
+  { label: "Isolation extérieure (RGE)", href: "/activites" },
 ]
 
 const usefulLinks = [

@@ -5,7 +5,96 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
-export default function AboutPage() {
+interface Service {
+  id: string
+  title: string
+  description: string
+  link: string
+  icon: string
+  order: number
+}
+
+async function getServices(): Promise<Service[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/services`, {
+      cache: 'no-store'
+    })
+    if (response.ok) {
+      return await response.json()
+    }
+  } catch (error) {
+    console.error('Error fetching services:', error)
+  }
+  
+  // Fallback to default services if API fails
+  return [
+    {
+      id: "1",
+      title: "Peinture",
+      description: "Peinture intérieure et extérieure avec une large gamme de finitions et de couleurs.",
+      link: "/activites#peinture",
+      icon: "red",
+      order: 1,
+    },
+    {
+      id: "2",
+      title: "Revêtements Muraux et Sols",
+      description: "Installation de papier peint, tissu mural et autres revêtements décoratifs et de sols.",
+      link: "/activites#revetements-muraux",
+      icon: "blue",
+      order: 2,
+    },
+    {
+      id: "3",
+      title: "Isolation Intérieure (Certification RGE)",
+      description: "Isolation thermique et acoustique intérieure avec certification RGE.",
+      link: "/activites#isolation-interieure",
+      icon: "green",
+      order: 3,
+    },
+    {
+      id: "4",
+      title: "Platerie – Placo – Plafond suspendu",
+      description: "Travaux de plâtrerie, cloisons, placo et installation de plafonds suspendus.",
+      link: "/activites#platrerie",
+      icon: "yellow",
+      order: 4,
+    },
+    {
+      id: "5",
+      title: "Rénovation de façades",
+      description: "Rénovation et ravalement de façades pour redonner vie à l'extérieur de votre bâtiment.",
+      link: "/activites#renovation-facades",
+      icon: "purple",
+      order: 5,
+    },
+    {
+      id: "6",
+      title: "Isolation Extérieure (Certification RGE)",
+      description: "Isolation thermique extérieure avec certification RGE pour améliorer l'efficacité énergétique.",
+      link: "/activites#isolation-exterieure",
+      icon: "orange",
+      order: 6,
+    },
+  ]
+}
+
+function getIconColorClass(colorName: string) {
+  const colorMap: { [key: string]: string } = {
+    red: "bg-red-500",
+    blue: "bg-blue-500",
+    green: "bg-green-500",
+    yellow: "bg-yellow-500",
+    purple: "bg-purple-500",
+    orange: "bg-orange-500",
+    pink: "bg-pink-500",
+    indigo: "bg-indigo-500",
+  }
+  return colorMap[colorName] || "bg-blue-500"
+}
+
+export default async function AboutPage() {
+  const services = await getServices()
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -17,7 +106,7 @@ export default function AboutPage() {
             À Propos de RDEP21
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-            Découvrez notre histoire, notre équipe et notre engagement envers la qualité et le service client.
+            Le point fort de RDEP21 est dans ses compétences. Vous pouvez réaliser l’ensemble de vos travaux de rénovation  et d’isolation  avec une seule équipe. 
           </p>
         </div>
       </section>
@@ -29,8 +118,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Notre Histoire</h2>
               <p className="text-lg text-gray-600 mb-4">
-                Fondée par un artisan qui travaille depuis plus de 30 ans, RDEP21 est une entreprise basée à Dijon
-                spécialisée dans les travaux de design d'intérieur (neufs ou anciens).
+                RDEP21, fondée par un artisan avec une expérience de plus de 35 ans, est une entreprise basée à Dijon spécialisée dans les travaux de rénovation et d’isolation  (Intérieure et d’extérieure) de votre habitat  
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Notre expertise et notre passion pour le métier nous permettent de réaliser des projets de qualité,
@@ -55,7 +143,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070"
+                src="/images/int.jpg"
                 alt="Équipe RDEP21"
                 fill
                 className="object-cover"
@@ -70,45 +158,18 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-12 text-center">Nos Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Placo</h3>
-              <p className="text-gray-600 mb-4">
-                Partition, rénovation, isolation thermique et/ou phonique. Nous réalisons tous vos travaux de placo avec
-                précision et qualité.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Installation de Menuiserie</h3>
-              <p className="text-gray-600 mb-4">
-                Installation de fenêtres, portes et autres éléments de menuiserie pour améliorer l'esthétique et
-                l'isolation de votre espace.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Décoration Murale et Plafond</h3>
-              <p className="text-gray-600 mb-4">
-                Plâtre, peinture, tissu en verre ou papier peint pour transformer vos murs et plafonds selon vos goûts.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Revêtements de Sol</h3>
-              <p className="text-gray-600 mb-4">
-                Parquet, PVC, carrelage et autres revêtements pour un sol durable et esthétique adapté à vos besoins.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Isolation</h3>
-              <p className="text-gray-600 mb-4">
-                Solutions d'isolation thermique pour améliorer le confort et réduire la consommation énergétique de
-                votre habitation.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Rénovation de Façade</h3>
-              <p className="text-gray-600 mb-4">
-                Ravalement et rénovation de façades pour redonner une nouvelle jeunesse à l'extérieur de votre bâtiment.
-              </p>
-            </div>
+            {services.map((service) => (
+              <div key={service.id} className="bg-white rounded-xl p-6 transition-all hover:shadow-lg">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className={`w-6 h-6 ${getIconColorClass(service.icon)} rounded-full`} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link href={service.link} className="text-primary font-medium inline-flex items-center">
+                  En savoir plus <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -244,7 +305,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Notre Zone d'Intervention</h2>
               <p className="text-lg text-gray-600 mb-4">
                 Basés à Dijon, en Côte d'Or, nous intervenons principalement dans la région, mais pouvons également nous
-                déplacer dans toute la France selon les projets.L'ensemble des devis que nous effectuons sont bien
+                déplacer dans toute la France selon les projets. L'ensemble des devis que nous effectuons sont bien
                 évidemment gratuits.
               </p>
               <p className="text-lg text-gray-600 mb-6">

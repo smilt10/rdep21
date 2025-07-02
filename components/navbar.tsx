@@ -12,10 +12,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="w-full flex h-20 items-center justify-between px-4 lg:px-8">
-        {/* Logo - stays at left on all screen sizes */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-14 w-40">
+      <div className="w-full flex h-16 md:h-24 items-center justify-between pl-0 pr-4 lg:pr-8">
+        {/* Logo - positioned at absolute far left corner, responsive sizing */}
+        <Link href="/" className="flex items-center">
+          <div className="relative h-12 w-48 md:h-24 md:w-80">
             <Image src="/images/logo-new.png" alt="RDEP21 Logo" fill className="object-contain" priority />
           </div>
         </Link>

@@ -40,41 +40,41 @@ async function getServices(): Promise<Service[]> {
     },
     {
       id: "2",
-      title: "Revêtements Muraux",
-      description: "Installation de papier peint, tissu mural et autres revêtements décoratifs.",
+      title: "Revêtements Muraux et Sols",
+      description: "Installation de papier peint, tissu mural et autres revêtements décoratifs et de sols.",
       link: "/activites#revetements-muraux",
       icon: "blue",
       order: 2,
     },
     {
       id: "3",
-      title: "Revêtements de Sol",
-      description: "Installation de parquet, carrelage, linoléum et autres revêtements de sol.",
-      link: "/activites#revetements-sol",
+      title: "Isolation Intérieure (Certification RGE)",
+      description: "Isolation thermique et acoustique intérieure avec certification RGE.",
+      link: "/activites#isolation-interieure",
       icon: "green",
       order: 3,
     },
     {
       id: "4",
-      title: "Plâtrerie",
-      description: "Travaux de plâtrerie, cloisons, doublage et isolation thermique et acoustique.",
+      title: "Platerie – Placo – Plafond suspendu",
+      description: "Travaux de plâtrerie, cloisons, placo et installation de plafonds suspendus.",
       link: "/activites#platrerie",
       icon: "yellow",
       order: 4,
     },
     {
       id: "5",
-      title: "Rénovation Complète",
-      description: "Rénovation complète d'intérieur pour particuliers et professionnels.",
-      link: "/activites#renovation-complete",
+      title: "Rénovation de façades",
+      description: "Rénovation et ravalement de façades pour redonner vie à l'extérieur de votre bâtiment.",
+      link: "/activites#renovation-facades",
       icon: "purple",
       order: 5,
     },
     {
       id: "6",
-      title: "Façades",
-      description: "Rénovation et ravalement de façades pour redonner vie à l'extérieur de votre bâtiment.",
-      link: "/activites#facades",
+      title: "Isolation Extérieure (Certification RGE)",
+      description: "Isolation thermique extérieure avec certification RGE pour améliorer l'efficacité énergétique.",
+      link: "/activites#isolation-exterieure",
       icon: "orange",
       order: 6,
     },
@@ -104,13 +104,19 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-foreground/20 z-10" />
-        <div className="container relative z-20 mx-auto px-4 py-24 sm:py-32 lg:flex lg:items-center lg:gap-8">
+        {/* Logo Watermark */}
+        <div className="absolute inset-0 z-5 flex items-center justify-center pointer-events-none">
+          <div className="relative h-64 w-80 opacity-10">
+            <Image src="/images/logo-new.png" alt="RDEP21 Logo Watermark" fill className="object-contain" />
+          </div>
+        </div>
+        <div className="container relative z-20 mx-auto px-4 py-8 sm:py-12 lg:flex lg:items-center lg:gap-8">
           <div className="lg:w-1/2">
             <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
               Réussissez la transition énergétique et la transformation de votre habitat
             </h1>
             <p className="mt-6 text-xl text-white/90">
-              Réussissez la transition énergétique et la transformation de votre habitat avec des experts certifiés
+              Le point fort de RDEP21 est dans ses compétences. Vous pouvez réaliser l'ensemble de vos travaux de rénovation et d'isolation avec une seule équipe.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-white text-primary hover:bg-white/90">
@@ -127,7 +133,7 @@ export default async function Home() {
                 ))}
               </div>
               <span className="text-white font-bold text-xl md:text-2xl lg:text-3xl px-4 py-2 bg-primary/80 rounded-lg shadow-lg animate-pulse">
-                Plus de 30 ans d'expérience
+                Plus de 35 ans d'expérience
               </span>
             </div>
           </div>
@@ -138,8 +144,14 @@ export default async function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="pt-8 pb-16 bg-white relative">
+        {/* Logo Watermark */}
+        <div className="absolute inset-0 flex items-center justify-end pr-8 pointer-events-none">
+          <div className="relative h-48 w-60 opacity-5">
+            <Image src="/images/logo-new.png" alt="RDEP21 Logo Watermark" fill className="object-contain" />
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nos Services</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
@@ -161,87 +173,6 @@ export default async function Home() {
                 </Link>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
-                <Image src="/images/mascot-character.png" alt="Notre équipe" fill className="object-contain" />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">À propos de RDEP21</h2>
-              <p className="text-lg text-gray-600 mb-4">
-                Fondée par un artisan qui travaille depuis plus de 30 ans, RDEP21 est une entreprise basée à Dijon
-                spécialisée dans les travaux de design d'intérieur (neufs ou anciens).
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Nous nous engageons à fournir un travail de qualité, avec un suivi rigoureux et dans le respect des
-                délais.
-              </p>
-
-              <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Qualité des réalisations</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Suivi des travaux</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Respect des délais</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </div>
-                  <p className="text-gray-700">Finitions impeccables</p>
-                </div>
-              </div>
-
-              <div className="mt-8 flex gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
-                  <Image
-                    src="/images/artisan-logo.png"
-                    alt="Certification Artisan"
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
-                  <Image
-                    src="/images/qualibat-rge.jpeg"
-                    alt="Certification Qualibat RGE"
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-2">
-                  <Image
-                    src="/images/capeb-logo.png"
-                    alt="CAPEB Côte-d'Or"
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

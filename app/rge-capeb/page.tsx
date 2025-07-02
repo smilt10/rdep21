@@ -48,7 +48,7 @@ export default function RgeCapebPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-100">
-                  Certification RGE
+                  RGE Certification No E-E191032
                 </Badge>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Reconnu Garant de l'Environnement
@@ -102,14 +102,6 @@ export default function RgeCapebPage() {
                     <div className="flex items-center gap-2">
                       <div className="h-2 w-2 bg-green-600 rounded-full"></div>
                       <span className="text-sm">Isolation thermique par l'intérieur</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-green-600 rounded-full"></div>
-                      <span className="text-sm">Ravalement de façade</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-green-600 rounded-full"></div>
-                      <span className="text-sm">Peinture et finitions</span>
                     </div>
                   </CardContent>
                 </Card>
