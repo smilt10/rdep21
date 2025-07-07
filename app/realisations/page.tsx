@@ -152,7 +152,7 @@ const otherProjects = [
   {
     title: "Peinture intérieure",
     location: "Chenôve",
-    image: "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=2069",
+    image: "/images/man_paint.png",
   },
   {
     title: "Pose de parquet",
