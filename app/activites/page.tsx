@@ -76,7 +76,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/man_paint.png"
+                src="/images/panting1.png"
                 alt="Services de peinture"
                 fill
                 className="object-cover"
@@ -135,7 +135,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/isolant.jpg"
+                src="/images/insolation.jpg"
                 alt="Isolation intérieure"
                 fill
                 className="object-cover"
